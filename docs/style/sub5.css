@@ -1,0 +1,140 @@
+/* 아이덴티티 페이지 탑바 수정 */
+/* 화면의 너비가 900px 이상 */
+@media (width >= 900px) {
+  .top-bar #logo-black {
+    display: none;
+  }
+  .top-bar.active #logo-black {
+    display: block;
+  }
+  .top-bar.active #logo-white {
+    display: none;
+  }
+  .top-bar:hover #logo-black {
+    display: block;
+  }
+  .top-bar:hover #logo-white {
+    display: none;
+  }
+  .top-bar__menu-box > ul > li > a {
+    color: #eee;
+  }
+  .top-bar.active .top-bar__menu-box > ul > li > a {
+    color: #212121;
+  }
+  .top-bar:hover .top-bar__menu-box > ul > li > a {
+    color: #212121;
+  }
+  .top__bar-icon-box .icon-search path {
+    transition: none;
+  }
+  .top__bar-icon-box .icon-search path,
+  .top__bar-icon-box .icon-shopping path {
+    stroke: #eee;
+  }
+  .top__bar-icon-box .icon-login path {
+    fill: #eee;
+  }
+  .top-bar:hover .top__bar-icon-box .icon-search path,
+  .top-bar:hover .top__bar-icon-box .icon-shopping path {
+    stroke: #212121;
+  }
+  .top-bar.active .top__bar-icon-box .icon-search path,
+  .top-bar.active .top__bar-icon-box .icon-shopping path {
+    stroke: #212121;
+  }
+  .top-bar:hover .top__bar-icon-box .icon-login path {
+    fill: #212121;
+  }
+  .top-bar.active .top__bar-icon-box .icon-login path {
+    fill: #212121;
+  }
+}
+
+/* 화면의 너비가 900px 이하 */
+@media (900px >= width) {
+  .top-bar #logo-white {
+    display: none;
+  }
+}
+
+/* 아이덴티티 페이지 구현 시작 */
+.identity-page .video-box,
+.mobile-video-box {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+.identity-page .video-box {
+  padding-bottom: 56.25%;
+}
+
+.identity-page .video-box::after,
+.mobile-video-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.identity-page .pc-video,
+.identity-page .mobile-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+.identity-page .text-box {
+  position: absolute;
+  bottom: 27%;
+  left: 12%;
+  z-index: 2;
+}
+
+.mobile-video-box {
+  display: none;
+}
+
+/* 화면의 너비가 900px 이하 */
+@media (900px >= width) {
+  .identity-page .text-box {
+    bottom: 10%;
+    left: 8%;
+  }
+}
+
+/* 화면의 너비가 767px 이하 */
+@media (767px >= width) {
+  .identity-page .video-box {
+    display: none;
+  }
+  .mobile-video-box {
+    display: block;
+    padding-bottom: 150%;
+  }
+  .identity-page .text-box {
+    bottom: 8%;
+    left: 7%;
+    padding: 0 20px 0 0;
+  }
+  .identity-page .text-box img {
+    width: 70px;
+  }
+  .identity-page .text-box .identity-page__k-title {
+    font-size: 13px;
+  }
+  .identity-page .text-box .identity-page__e-title {
+    font-size: 12px;
+  }
+}
+/* 아이덴티티 페이지 구현 끝 */

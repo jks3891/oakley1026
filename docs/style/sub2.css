@@ -1,0 +1,448 @@
+/* 커스텀 페이지 구현 시작 */
+.custom-page {
+  color: #212121;
+}
+
+.custom-page__innner {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.custom-page__sunglass {
+  flex-basis: 65%;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.custom-page__sunglass-img {
+  cursor: zoom-in;
+  transition: transform 0.5s;
+}
+
+.custom-page__sunglass-img.zoom img {
+  transform: scale(1.5);
+  cursor: zoom-out;
+}
+
+.custom-page__filter {
+  flex-basis: 35%;
+  padding-bottom: 100px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.front-color,
+.temples-color,
+.lens-color,
+.case-color {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  display: none;
+}
+
+.front-color.active {
+  display: block;
+}
+
+.temples-color.active {
+  display: block;
+}
+
+.lens-color.active {
+  display: block;
+}
+
+.case-color.active {
+  display: block;
+}
+
+.custom-page__sunglass-btn {
+  margin: 30px auto 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 7px;
+  font-size: 16px;
+  background-color: #eee;
+  border-radius: 10px;
+  width: 130px;
+  height: 46px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-page__sunglass-btn:hover {
+  background-color: #d9d9d9;
+}
+
+.custom-page__filter ul > li {
+  margin: 0 28px 0 28px;
+  border-bottom: 1px solid #c9c8c8;
+}
+
+.custom-page__filter ul > li:last-child {
+  border-bottom: none;
+}
+
+.custom-title > p:hover {
+  text-decoration: none;
+}
+
+.custom-page__filter ul li h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0 25px;
+}
+
+.custom-page__color-wrap {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 1.2vw;
+  flex-wrap: wrap;
+}
+
+.custom-page__color-wrap li {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin: 0 0 22px 0 !important;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-page__color-wrap li::after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #212121;
+  border-radius: 50%;
+  display: none;
+}
+
+.custom-page__color-wrap li.active::after {
+  display: block;
+}
+
+.custom-page__color-wrap .lens-red {
+  background: linear-gradient(#c9467a 0%, #e65062 50%, #f67345 100%);
+}
+
+.custom-page__color-wrap .lens-green {
+  background: linear-gradient(#7bde9e 0%, #8bc3d2 69%, #c87de4 100%);
+}
+
+.custom-page__color-wrap .lens-purple {
+  background: linear-gradient(#994caa 0%, #e72365 69%, #fd8330 100%);
+}
+
+.custom-page__color-wrap .lens-pink {
+  background: linear-gradient(#e36b74 0%, #f0737b 69%, #ff7960 100%);
+}
+
+.custom-page__color-wrap .lens-brown {
+  background: linear-gradient(#966d57 0%, #a0735c 69%, #a1745d 100%);
+}
+
+.custom-page__filter .Engrave-box {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #c9c8c8;
+  padding: 13px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Engrave-box__text input {
+  background-color: transparent;
+  font-size: 16px;
+  width: 80%;
+  outline: none;
+  color: #3a3a3a;
+}
+
+.Engrave-box__btn {
+  width: 80px;
+  height: 33px;
+  background-color: #212121;
+  border-radius: 8px;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.custom-page-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 35%;
+  height: 80px;
+  background-color: #eee;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+
+.custom-page-bottom__btn {
+  width: 140px;
+  height: 40px;
+  background-color: #212121;
+  border-radius: 8px;
+  color: #eee;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* 화면의 너비가 900px 이하 */
+@media (900px >= width) {
+  .custom-page__filter ul > li {
+    margin: 0 10px 0 10px;
+  }
+  .custom-page__color-wrap li {
+    width: 30px;
+    height: 30px;
+  }
+
+  .custom-page__color-wrap li::after {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* 화면의 너비가 700px 이하 */
+@media (700px >= width) {
+  .custom-page__innner {
+    flex-direction: column;
+  }
+  .custom-page__sunglass {
+    flex-basis: 55%;
+    position: block;
+    height: 100%;
+  }
+  .custom-page__sunglass-btn {
+    margin: 25px auto 8px auto;
+    font-size: 14px;
+    width: 110px;
+    height: 36px;
+  }
+  .front-color,
+  .temples-color,
+  .lens-color,
+  .case-color {
+    width: 100%;
+  }
+  .custom-page__sunglass-img.zoom img {
+    transform: scale(1.3);
+  }
+  .custom-page__filter {
+    flex-basis: 45%;
+    padding-bottom: 100px;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 0 !important;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+  }
+  .custom-page__filter ul > li {
+    margin: 0 7px;
+  }
+  .custom-page__filter ul li h3 {
+    font-size: 18px;
+    margin: 20px 0 17px;
+  }
+  .custom-page__filter .custom-title {
+    margin-bottom: 10px;
+  }
+  .custom-page__filter .custom-title h3 {
+    font-size: 22px;
+  }
+  .custom-page__filter .custom-title p {
+    font-size: 12px;
+  }
+  .custom-page__color-wrap {
+    column-gap: 15px;
+  }
+  .custom-page__color-wrap li {
+    width: 7vw;
+    height: 7vw;
+    margin-bottom: 16px !important;
+    font-size: 14px;
+  }
+  .custom-page__color-wrap li::after {
+    width: 8.5vw;
+    height: 8.5vw;
+  }
+  .custom-page__filter .Engrave-box {
+    height: 100px;
+    padding: 10px;
+  }
+  .Engrave-box__text input {
+    font-size: 14px;
+  }
+  .Engrave-box__btn {
+    width: 60px;
+    height: 28px;
+    font-size: 12px;
+  }
+  .custom-page-bottom-bar {
+    width: 100%;
+    height: 60px;
+    padding: 0 7px;
+  }
+}
+
+/* 화면의 너비가 450px 이하 */
+@media (450px >= width) {
+  .custom-page__sunglass {
+    flex-basis: 50%;
+  }
+  .custom-page__filter {
+    flex-basis: 50%;
+  }
+}
+/* 커스텀 페이지 구현 끝 */
+
+/* 가상 거울 팝업창 구현 시작 */
+.vertual-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.7s;
+  z-index: 31;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertual-popup.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.vertual-popup__video {
+  position: relative;
+  width: 378px;
+  height: 672px;
+}
+
+.vertual-popup__video::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(transparent 0%, black 90%);
+  z-index: 32;
+}
+
+.vertual-popup__video #video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+.vertual-popup__text {
+  position: absolute;
+  bottom: 96px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  z-index: 32;
+}
+
+.vertual-popup__text h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.vertual-popup__text p {
+  font-size: 14px;
+  padding: 0 27px;
+}
+
+.vertual-popup__btn {
+  position: absolute;
+  bottom: 27px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #212121;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 32;
+  transition: all 0.5s ease-out;
+}
+
+.vertual-popup__btn:hover {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* 화면의 너비가 767px 이하 */
+@media (767px >= width) {
+  .vertual-popup__video {
+    width: 297px;
+    height: 528px;
+  }
+  .vertual-popup__text {
+    bottom: 82px;
+  }
+  .vertual-popup__text h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .vertual-popup__text p {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+  .vertual-popup__btn {
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+/* 가상 거울 팝업창 구현 끝 */
+
+@media (600px >= width) {
+  .help-side-btn {
+    top: 42% !important;
+  }
+}

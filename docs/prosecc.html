@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로세스 페이지</title>
+
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 테일윈드 불러오기 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS 불러오기 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- 폰트어썸 불러오기 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- 스와이퍼 불러오기 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 공통 css 불러오기 -->
+    <link rel="stylesheet" href="style/style.css" />
+
+    <!-- 프로세스 페이지 css 불러오기 -->
+    <link rel="stylesheet" href="style/prosecc.css" />
+  </head>
+  <body>
+    <!-- 오클리 프로세스 페이지 구현 시작 -->
+    <header class="prosecc-header">
+      <div class="logo-slide mt-[25px]">
+        <ul class="flex gap-x-[30px]">
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+        </ul>
+      </div>
+      <div class="con mx-auto">
+        <div class="prosecc-img mt-[109px]">
+          <img
+            src="https://i.postimg.cc/25Y9hf58/p-m.png"
+            alt="프로세스 목업"
+          />
+          <a href="index.html" class="prosecc-btn">
+            <div>사이트 바로가기</div>
+          </a>
+        </div>
+        <div class="flex items-center justify-end gap-x-[3px] mt-[76px]">
+          <p>
+            <svg
+              class="mb-[2px]"
+              width="8"
+              height="11"
+              viewBox="0 0 7 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.52195 0.333879L0.339949 5.64988C0.248935 5.74325 0.197998 5.86849 0.197998 5.99888C0.197998 6.12927 0.248935 6.2545 0.339949 6.34788L5.52195 11.6659C5.56435 11.7094 5.61503 11.744 5.67103 11.7677C5.72702 11.7913 5.78717 11.8035 5.84795 11.8035C5.90872 11.8035 5.96888 11.7913 6.02487 11.7677C6.08086 11.744 6.13155 11.7094 6.17395 11.6659C6.26118 11.5766 6.31001 11.4567 6.31001 11.3319C6.31001 11.207 6.26118 11.0872 6.17395 10.9979L1.30095 5.99888L6.17395 1.00088C6.26088 0.911631 6.30953 0.791967 6.30953 0.667379C6.30953 0.542791 6.26088 0.423127 6.17395 0.333879C6.13155 0.290336 6.08086 0.255727 6.02487 0.232095C5.96888 0.208464 5.90872 0.196289 5.84795 0.196289C5.78717 0.196289 5.72702 0.208464 5.67103 0.232095C5.61503 0.255727 5.56435 0.290336 5.52195 0.333879Z"
+                fill="black"
+              />
+            </svg>
+          </p>
+          <p lang="en" class="text-[16px]">Prosecc Page</p>
+          <p>
+            <svg
+              class="mb-[2px]"
+              width="8"
+              height="11"
+              viewBox="0 0 7 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.788109 0.13759L5.97011 5.45359C6.06112 5.54696 6.11206 5.6722 6.11206 5.80259C6.11206 5.93298 6.06112 6.05822 5.97011 6.15159L0.788109 11.4696C0.745713 11.5131 0.695024 11.5477 0.639033 11.5714C0.583042 11.595 0.522884 11.6072 0.46211 11.6072C0.401336 11.6072 0.341177 11.595 0.285186 11.5714C0.229195 11.5477 0.178506 11.5131 0.13611 11.4696C0.0488801 11.3803 4.43459e-05 11.2604 4.43459e-05 11.1356C4.43459e-05 11.0108 0.0488801 10.8909 0.13611 10.8016L5.00911 5.80259L0.13611 0.80459C0.0491793 0.715342 0.000532627 0.595678 0.000532627 0.47109C0.000532627 0.346502 0.0491793 0.226838 0.13611 0.13759C0.178506 0.0940467 0.229195 0.0594378 0.285186 0.0358064C0.341177 0.012175 0.401336 0 0.46211 0C0.522884 0 0.583042 0.012175 0.639033 0.0358064C0.695024 0.0594378 0.745713 0.0940467 0.788109 0.13759Z"
+                fill="black"
+              />
+            </svg>
+          </p>
+        </div>
+        <div
+          class="prosecc-headline flex justify-between mt-[5px] text-[16px] py-[10px]"
+        >
+          <p>프로젝트 : 오클리 사이트 리뉴얼 (Web, Mobile)</p>
+          <p>페이지 수 : main page 1 / sub page 6</p>
+          <p>기여도 : 개인 (100%)</p>
+          <p>기간 : 2024.10</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="prosecc-section">
+      <div class="con mx-auto">
+        <div class="prosecc-text flex mt-[55px]">
+          <div class="prosecc-text-left w-[50%] pr-[80px]">
+            <div class="prosecc-purpose">
+              <strong lang="en">Purpose</strong>
+              <p>
+                기존 홈페이지에서 불편했던 UI/UX 요소들을 개선하고, 브랜드
+                아이덴티티와 방향성을 명확히 전달할 수 있도록 리뉴얼했습니다.
+                불필요한 요소를 과감히 삭제하여 사용자가 직관적으로 브랜드와
+                상품에 집중할 수 있게 하였습니다.
+              </p>
+            </div>
+            <div class="prosecc-target">
+              <strong lang="en">Target</strong>
+              <p class="mb-[14px]">- 패션에 대해 관심이 많은 사람</p>
+              <p>- 온라인으로 스포츠 용품을 구매하려는 소비자</p>
+            </div>
+            <div class="prosecc-concept">
+              <strong lang="en">Concept</strong>
+              <p>
+                시각적인 요소에 재미를 주기 위해 메인 페이지에 스크롤
+                애니메이션과 다양한 레이아웃 배치를 주었고, 스포티하고 과감한
+                비디오와 이미지와의 조화를 맞추기 위해 무채색의 비교적 차분한
+                컬러를 사용했습니다.
+              </p>
+            </div>
+          </div>
+          <div class="prosecc-text-right w-[50%] pr-[80px]">
+            <div class="prosecc-skill">
+              <strong lang="en">Skill</strong>
+              <p class="mb-[14px]">
+                웹 디자인 트랜드에 맞춰 테일윈드와 제이쿼리 기술을 사용해 코드의
+                길이를 줄이고, 가독성을 높혔습니다.
+              </p>
+              <p class="mb-[14px]">
+                AOS 스크롤 애니메이션을 활용해 웹 사이트를 동적으로 만들어서
+                시각적 흥미를 주었고, 탭 메뉴와 스와이퍼 라이브러리를 활용하여
+                사용자의 편리성을 더했습니다.
+              </p>
+              <p>
+                상품 페이지에서 css 변수를 이용하여 반응형 그리드를 만들고, 버튼
+                토글을 통해 상품의 배열을 조정할 수 있도록 하였습니다.
+              </p>
+            </div>
+            <div class="prosecc-font">
+              <strong lang="en">Font</strong>
+              <p class="mb-[14px]">한글 : Noto Sans</p>
+              <p lang="en">영문 : Roboto</p>
+            </div>
+            <div class="prosecc-color">
+              <strong>Color</strong>
+              <ul class="flex gap-x-[29px]">
+                <li>
+                  <div class="color color-1 bg-[#fff]"></div>
+                  <span lang="en">#FFFFFF</span>
+                </li>
+                <li>
+                  <div class="color color-2 bg-[#eee]"></div>
+                  <span lang="en">#EEEEEE</span>
+                </li>
+                <li>
+                  <div class="color color-3 bg-[#d9d9d9]"></div>
+                  <span lang="en">#D9D9D9</span>
+                </li>
+                <li>
+                  <div class="color color-4 bg-[#37325a]"></div>
+                  <span lang="en">#37325A</span>
+                </li>
+                <li>
+                  <div class="color color-5 bg-[#2f2f2f]"></div>
+                  <span lang="en">#2F2F2F</span>
+                </li>
+                <li>
+                  <div class="color color-6 bg-[#00031e]"></div>
+                  <span lang="en">#00031E</span>
+                </li>
+                <li>
+                  <div class="color color-7 bg-[#212121]"></div>
+                  <span lang="en">#212121</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prosecc-section-2">
+      <div class="con mx-auto">
+        <div class="prosecc-ctn prosecc-ctn-1">
+          <p lang="en">Main Page</p>
+          <div>
+            <img
+              class="h-[2411px] mr-[20px]"
+              src="https://ifh.cc/g/OQX2fR.jpg"
+              alt="프로세스 메인 pc"
+            />
+            <img
+              class="h-[2411px]"
+              src="https://ifh.cc/g/txj91n.jpg"
+              alt="프로세스 메인 mobile"
+            />
+            <div class="ctn-line">
+              <svg
+                width="10"
+                height="2412"
+                viewBox="0 0 10 2412"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M5 0L4.99989 2412" stroke="black" stroke-width="2" />
+                <circle cx="5" cy="5" r="5" fill="black" />
+                <circle cx="5" cy="272" r="5" fill="black" />
+                <circle cx="5" cy="543" r="5" fill="black" />
+                <circle cx="5" cy="1342" r="5" fill="black" />
+                <circle cx="5" cy="1158" r="5" fill="black" />
+                <circle cx="5" cy="976" r="5" fill="black" />
+                <circle cx="5" cy="1562" r="5" fill="black" />
+                <circle cx="5" cy="1899" r="5" fill="black" />
+                <circle cx="5" cy="2210" r="5" fill="black" />
+                <circle cx="5" cy="2407" r="5" fill="black" />
+              </svg>
+            </div>
+            <div class="prosecc-explain">
+              <div>
+                <strong lang="en">Header</strong>
+                <p>
+                  hover, 스크롤 시 애니메이션 효과를 주어 가시성에 중점을
+                  두었고, 반응형 시 사이드바를 배치하여 접근성을 높혔습니다.
+                  <br />
+                  - 로고 클릭 시 메인 페이지로 이동합니다.
+                  <br />
+                  - 메뉴 hover 시 2차, 3차 메가메뉴가 나오고 클릭 시 해당
+                  페이지로 이동합니다.
+                  <br />
+                  - 돋보기 아이콘 클릭 시 검색창이 Slide Down 됩니다.
+                  <br />
+                  - 모바일 화면 햄버거 메뉴 클릭 시 사이드바가 나옵니다.
+                </p>
+                <strong lang="en" class="mt-[51px]">Main-1</strong>
+                <p>
+                  비디오 슬라이드를 사용해 사용자의 시각적 흥미를 유도하고,
+                  신상품과 최신 브랜드 이슈를 한눈에 볼 수 있게 했습니다.
+                </p>
+                <strong lang="en" class="mt-[182px]">Main-2</strong>
+                <p>
+                  제품의 장점을 강조하고, 버튼 클릭을 통해 상품 페이지로 바로
+                  이동할 수 있게 하여 소비자의 소비 욕구를 높히도록 구현해
+                  보았습니다.
+                  <br />
+                  - 버튼 클릭 시 각 상품 페이지로 이동합니다.
+                </p>
+                <strong lang="en" class="mt-[318px]">Main-3</strong>
+                <p>
+                  버튼 클릭을 클릭하면 팝업 형식으로 나오는 비디오를 통해 해당
+                  브랜드의 기술을 보여주었습니다.
+                </p>
+                <strong lang="en" class="mt-[93px]">Main-4</strong>
+                <p>
+                  탭 메뉴, 슬라이드를 접목시켜 제품을 한 눈에 볼 수 있게
+                  했습니다.
+                  <br />
+                  - 버튼 클릭 시 커스텀 페이지로 이동합니다.
+                </p>
+                <strong lang="en" class="mt-[93px]">Help Button</strong>
+                <p>
+                  모든 페이지 우측에 도움 버튼을 고정시켜 사용자의 편리성을
+                  높혔습니다.
+                  <br />
+                  - 버튼 클릭 시 도움 관련 정보가 팝업 형식으로 나타납니다.
+                </p>
+                <strong lang="en" class="mt-[106px]">Main-5</strong>
+                <p>
+                  색다른 레이아웃 배치와, 애니메이션을 사용해 신제품 컬렉션을
+                  홍보하는 배너로 시각적 흥미와 사용자의 집중도를 올렸습니다.
+                </p>
+                <strong lang="en" class="mt-[248px]">Main-6</strong>
+                <p>
+                  애니메이션으로 반짝이는 별을 표현해 보았고, 셀럽과 콜라보한
+                  한정판 제품에 대한 정보를 넣었습니다.
+                  <br />
+                  - 버튼 클릭 시 상품 상세 페이지로 이동합니다.
+                </p>
+                <strong lang="en" class="mt-[200px]">Footer</strong>
+                <p>
+                  로고에 애니메이션을 추가하여 브랜드를 한번 더 강조했습니다.
+                </p>
+                <strong lang="en" class="mt-[61px]">Page Up Button</strong>
+                <p>
+                  모든 페이지 우측 하단에 버튼을 고정시켜서 클릭 한 번으로
+                  페이지 최상단으로 이동 할 수 있게 하여 사용자의 편리성을
+                  높혔습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prosecc-ctn prosecc-ctn-2">
+          <p class="inline-block mr-[7px]">Sub Page - 상품 페이지</p>
+          <p lang="en" class="inline-block">[Sunglass, Apparel, Accessories]</p>
+          <div>
+            <img
+              class="h-[1860px] mr-[45px]"
+              src="https://ifh.cc/g/qVGNk8.png"
+              alt="프로세스 서브1 pc"
+            />
+            <img
+              class="h-[1860px]"
+              src="https://ifh.cc/g/5bZNbd.jpg"
+              alt="프로세스 서브1 mobile"
+            />
+            <div class="ctn-line">
+              <svg
+                width="10"
+                height="1861"
+                viewBox="0 0 10 1861"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M5 0L4.99992 1861" stroke="black" stroke-width="2" />
+                <circle cx="5" cy="171" r="5" fill="black" />
+                <circle cx="5" cy="663" r="5" fill="black" />
+                <circle cx="5" cy="839" r="5" fill="black" />
+              </svg>
+            </div>
+            <div class="prosecc-explain">
+              <strong lang="en" class="mt-[164px]">Arrange</strong>
+              <p>
+                상품 배열 버튼 토글을 통해 한 줄에 나타나는 상품 개수를 조절할
+                수 있게 만들어서 사용자의 편리성을 높혔습니다.
+                <br />
+                - 버튼 토글 시 pc에서는 3개에서 4개, 모바일에서는 2개에서 3개로
+                상품 배열이 변경 됩니다.
+              </p>
+              <strong lang="en" class="mt-[30px]">Filter</strong>
+              <p>
+                상품 필터를 구현했습니다.
+                <br />
+                - 클릭 시 pc에서는 위에서, 모바일에서는 아래에서 필터창이
+                나옵니다.
+              </p>
+              <p class="mt-[210px]">
+                하트 이모티콘 토글을 통해 사용자가 마음에 드는 상품을 찜 할 수
+                있게 구현했습니다.
+              </p>
+              <strong class="mt-[124px]">Product Slide</strong>
+              <p>
+                hover 시 슬라이드를 구현해 제품의 전, 측, 후면의 이미지를 한
+                눈에 볼 수 있게 구현 하므로써 사용자의 편리성을 높혔습니다.
+                <br />
+                - 이미지, 텍스트 클릭 시 상품 상세 페이지로 이동합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="prosecc-ctn prosecc-ctn-3">
+          <p>Sub Page - 커스텀 페이지</p>
+          <div>
+            <img
+              class="h-[502px] mr-[20px]"
+              src="https://i.postimg.cc/bNh9J9V1/2-p.png"
+              alt="프로세스 페이지 서브2 pc"
+            />
+            <img
+              class="h-[502px]"
+              src="https://i.postimg.cc/HkSw6DYt/2-m.png"
+              alt="프로세스 페이지 서브2 mobile"
+            />
+            <div class="ctn-line">
+              <svg
+                width="10"
+                height="502"
+                viewBox="0 0 10 502"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M5 0L5.00002 502" stroke="black" stroke-width="2" />
+                <circle cx="5" cy="287" r="5" fill="black" />
+                <circle cx="5" cy="69" r="5" fill="black" />
+              </svg>
+            </div>
+            <div class="prosecc-explain">
+              <p class="mt-[64px]">
+                버튼 클릭 시 커스텀한 안경을 가상으로 착용해볼 수 있도록
+                안내하는 비디오가 팝업 형식으로 나옵니다.
+              </p>
+              <p class="mt-[170px]">
+                선글라스 제품을 소비자 취향에 맞게 커스텀 할 수 있는 페이지를
+                구현해 보았습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="prosecc-ctn prosecc-ctn-4">
+          <p>Sub Page - 아이덴티티 페이지</p>
+          <div>
+            <img
+              class="h-[475px] mr-[66px]"
+              src="https://i.postimg.cc/hPZvwSmh/3-p.png"
+              alt="프로세스 페이지 서브3 pc"
+            />
+            <img
+              class="h-[475px]"
+              src="https://i.postimg.cc/9Q40HvPb/3-m.png"
+              alt="프로세스 페이지 서브3 mobile"
+            />
+            <div class="ctn-line">
+              <svg
+                width="10"
+                height="474"
+                viewBox="0 0 10 474"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M5 0L4.99998 474" stroke="black" stroke-width="2" />
+                <circle cx="5" cy="38" r="5" fill="black" />
+              </svg>
+            </div>
+            <div class="prosecc-explain">
+              <p class="mt-[33px]">
+                비디오와 텍스트를 통해 브랜드의 아이덴티티를 담은 서브 페이지를
+                제작해 보았습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="prosecc-ctn prosecc-ctn-5">
+          <p>Sub Page - 상품 상세 페이지</p>
+          <div>
+            <img
+              class="h-[2386px] mr-[95px]"
+              src="https://ifh.cc/g/qon4Xo.jpg"
+              alt="프로세스 페이지 서브4 pc"
+            />
+            <img
+              class="h-[2386px]"
+              src="https://ifh.cc/g/rlgcjy.jpg"
+              alt="프로세스 페이지 서브4 mobile"
+            />
+            <div class="ctn-line">
+              <svg
+                width="10"
+                height="2386"
+                viewBox="0 0 10 2386"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M5 0L4.9999 2386" stroke="black" stroke-width="2" />
+                <circle cx="5" cy="55" r="5" fill="black" />
+                <circle cx="5" cy="228" r="5" fill="black" />
+                <circle cx="5" cy="599" r="5" fill="black" />
+                <circle cx="5" cy="1877" r="5" fill="black" />
+                <circle cx="5" cy="2122" r="5" fill="black" />
+              </svg>
+            </div>
+            <div class="prosecc-explain">
+              <strong lang="en" class="mt-[48px]">Product Slide</strong>
+              <p>
+                사용자의 편리성을 높히기 위해서 슬라이드로 상품의 전, 측, 후면의
+                모습을 보기 편하게 구현 했습니다.
+              </p>
+              <p class="mt-[82px]">
+                color 패널에서 다른 색상 상품 클릭 시 해당 제품으로 페이지가
+                이동 됩니다.
+              </p>
+              <p class="mt-[322px]">
+                해당 제품과 콜라보 한 인플루언서의 비디오와 사진을 넣어서
+                매니아층의 소비 욕구를 끌어올리게 했습니다.
+              </p>
+              <p class="mt-[1230px]">
+                제품에 들어간 기술과 기능을 소비자가 보기 쉽게 카드 형식으로
+                배치 했습니다.
+              </p>
+              <p class="mt-[198px]">
+                해당 제품과 관련된 다른 제품들을 슬라이드 형식으로 배치
+                했습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="logo-slide mt-[95px] mb-[25px]">
+        <ul class="flex gap-x-[30px]">
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+          <li>
+            <img
+              src="https://i.postimg.cc/8zzVWWX0/Pik-Png-com-yankees-logo-png-930443.png"
+              alt="프로세스 오클리 로고"
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 오클리 프로세스 페이지 구현 끝 -->
+  </body>
+</html>

@@ -1,0 +1,145 @@
+/* 오클리 프로세스 페이지 구현 시작 */
+.logo-slide ul {
+  width: 5000px;
+  flex-wrap: nowrap;
+  animation: call 20s linear infinite;
+}
+
+.logo-slide ul:hover {
+  animation-play-state: paused;
+}
+
+.logo-slide ul li {
+  width: 600px;
+  height: auto;
+}
+
+.logo-slide ul li img {
+  width: 100%;
+  display: block;
+}
+
+@keyframes call {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.prosecc-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prosecc-img img {
+  width: 625px;
+  display: block;
+}
+
+.prosecc-btn {
+  width: 220px;
+  height: 55px;
+  border-radius: 8px;
+  background-color: #212121;
+  margin-top: 30px;
+}
+
+.prosecc-btn > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(
+    270deg,
+    #eee,
+    #eee,
+    rgba(34, 34, 34, 0),
+    rgba(34, 34, 34, 0)
+  );
+  background-position: 1% 50%;
+  background-size: 300% 300%;
+  border: 1px solid #212121;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.7s ease-out;
+}
+
+.prosecc-btn > div:hover {
+  background-position: 99% 50%;
+  color: #212121;
+}
+
+.prosecc-headline {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.prosecc-text strong {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 21px;
+  display: block;
+}
+
+.prosecc-text p {
+  font-size: 18px;
+}
+
+.prosecc-text div {
+  margin-bottom: 85px;
+}
+
+.prosecc-color li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+.prosecc-color .color {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.prosecc-color .color-1 {
+  border: 1px solid #000;
+}
+
+.prosecc-ctn {
+  margin-bottom: 80px;
+}
+
+.prosecc-ctn > p {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 19px;
+}
+
+.prosecc-ctn > div {
+  display: flex;
+}
+
+.ctn-line {
+  margin-left: 25px;
+  margin-right: 15px;
+}
+
+.prosecc-explain strong {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 9px;
+  display: block;
+}
+
+.prosecc-explain p {
+  font-size: 16px;
+}
+/* 오클리 프로세스 페이지 구현 끝 */

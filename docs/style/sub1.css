@@ -1,0 +1,639 @@
+/* 선글라스 상품 페이지 구현 시작 */
+.suglass-page {
+  color: #212121;
+}
+
+.sunglass-page__category .category-img {
+  width: 83px;
+  height: 83px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.sunglass-page__category .category-img img {
+  width: 80px;
+  height: 48px;
+}
+
+.sunglass-page__category ul {
+  width: 948px;
+  margin: 0 auto;
+}
+
+.sunglass-page__category ul li {
+  width: calc(100% / 8);
+}
+
+.sunglass-page__category ul li.active .category-img {
+  border: 1px solid #212121;
+  background-color: #dfdfdf;
+}
+
+.sunglass-page__category ul li.active .category-text {
+  color: #212121;
+  font-weight: bold;
+}
+
+.sunglass-page__category .category-text {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px;
+  color: #616161;
+  cursor: pointer;
+  user-select: none;
+}
+
+.suglass-page {
+  padding-top: 180px;
+}
+
+.suglass-page__filter-line {
+  position: sticky;
+  top: 80px;
+  width: 100%;
+  border-bottom: 1px solid #d9d9d9;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 10px 0;
+  margin-top: 80px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.suglass-page__filter-line > div > p {
+  cursor: pointer;
+  color: #7f7f7f;
+  user-select: none;
+}
+
+.suglass-page__filter-line .pc-filter.active {
+  color: #212121;
+  font-weight: bold;
+}
+
+.pc-icon-filter.active {
+  color: #212121;
+  font-weight: bold;
+}
+
+.pc-icon-filter.active > svg {
+  transform: rotate(180deg);
+  margin-top: 2px;
+}
+
+.suglass-page__prod {
+  margin-top: 50px;
+}
+
+.suglass-page__prod ul {
+  --cc: 3;
+  --gap: 40px;
+  gap: 70px var(--gap);
+}
+
+.suglass-page__prod ul li {
+  width: calc(100% / var(--cc) - (var(--gap) * (var(--cc) - 1)) / var(--cc));
+}
+
+.suglass-page__prod-img {
+  position: relative;
+  background-color: #eee;
+  cursor: pointer;
+  user-select: none;
+}
+
+.suglass-page__prod-img img {
+  width: 100%;
+  display: block;
+  padding: 30px;
+  transition: opacity 0.7s;
+}
+
+.suglass-page__prod #mbappe-prod-img,
+#mbappe-prod-img2 {
+  padding: 0;
+}
+
+.suglass-page__swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+.suglass-page__prod-img .swiper-button-group {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.suglass-page__prod-img .swiper-button {
+  font-size: 24px;
+  color: #505050;
+}
+
+.swiper-button i {
+  font-weight: 600 !important;
+}
+
+.suglass-page__prod-img .swiper-button::after {
+  content: "";
+}
+
+.suglass-page__prod-img .swiper-pagination {
+  position: absolute;
+  bottom: 0 !important;
+  display: flex;
+
+  .swiper-pagination-bullet {
+    flex: 1 1 0%;
+    height: 2px;
+    border-radius: 0;
+    margin: 0 !important;
+    background-color: #888;
+    transition: all 0.5s;
+
+    &.swiper-pagination-bullet-active {
+      background-color: #000;
+    }
+  }
+}
+
+.suglass-page__prod-img .icon-heart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 3;
+}
+
+.suglass-page__prod-img .icon-heart path {
+  stroke-width: 1px;
+}
+
+.suglass-page__prod-img .icon-heart.active path {
+  fill: red;
+  stroke: red;
+}
+
+.suglass-page__prod .suglass-page__prod-name {
+  font-size: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.suglass-page__prod .suglass-page__prod-name p:last-child {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* 선글라스 필터창 구현 시작 */
+.suglass-filter {
+  position: absolute;
+  top: 58px;
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  border-top: none;
+  display: none;
+}
+
+.suglass-filter ul > li {
+  width: calc(100% / 5);
+  border-left: 1px solid #d9d9d9;
+  padding-bottom: 10px;
+}
+
+.suglass-filter ul > li:first-child {
+  border-left: none;
+}
+
+.suglass-filter .suglass-filter__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 20px 10px;
+}
+
+.suglass-filter .ctn-left {
+  width: calc(100% / 2);
+  margin-left: 10px;
+}
+
+.suglass-filter .ctn-right {
+  width: calc(100% / 2);
+  margin-left: 10px;
+}
+
+.filter-check {
+  margin-bottom: 8px;
+}
+
+.filter-check:hover .icon-box path {
+  fill: #000;
+}
+
+.filter-check.active .icon-box {
+  display: none;
+}
+
+.filter-check.active .icon-check-box {
+  display: block;
+}
+
+.icon-box,
+.icon-check-box {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.icon-check-box {
+  display: none;
+}
+
+.suglass-filter__ctn .color-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+.suglass-filter__ctn p {
+  font-size: 16px;
+  margin: 2px 0 0 0;
+}
+
+.filter-btn-wrap {
+  border-top: 1px solid #d9d9d9;
+  justify-content: end;
+}
+
+.filter-btn {
+  width: 130px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.filter-btn1 {
+  border-color: #d9d9d9;
+}
+
+.suglass-page__bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  padding: 60px 0;
+}
+
+.suglass-page__bottom p {
+  cursor: pointer;
+  color: #7f7f7f;
+  font-size: 18px;
+}
+
+.suglass-page__bottom p.active {
+  font-weight: bold;
+  color: #212121;
+}
+
+.bottom-arrow {
+  font-weight: 600 !important;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+
+/* 화면의 너비가 800px 이상 */
+@media (width >= 800px) {
+  .mobile-suglass-filter {
+    display: none;
+  }
+}
+
+/* 화면의 너비가 800px 이하 */
+@media (800px >= width) {
+  /* 모바일 선글라스 필터창 구현 시작 */
+  .mobile-suglass-filter {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .mobile-suglass-filter__top p {
+    font-size: 14px;
+    cursor: pointer;
+    color: #7f7f7f;
+  }
+
+  .mobile-suglass-filter__top p.active {
+    color: #212121;
+    font-weight: bold;
+  }
+
+  .mobile-suglass-filter__line {
+    border-bottom: 1px solid #afafaf;
+    font-size: 14px;
+    padding-bottom: 10px;
+    overflow: auto;
+  }
+
+  .mobile-suglass-filter__line .filter-category {
+    color: #7f7f7f;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .mobile-suglass-filter__line .filter-category.active {
+    color: #212121;
+    font-weight: bold;
+  }
+
+  .mobile-suglass-filter .filter-category-ctn {
+    font-size: 14px;
+    margin-top: 15px;
+    width: 100%;
+    display: none;
+  }
+
+  .filter-category-ctn.active {
+    display: flex;
+  }
+
+  .filter-category-ctn .ctn-left,
+  .ctn-right {
+    width: 50%;
+  }
+
+  .suglass-filter-category .icon-box-wrap {
+    margin-left: -6px;
+  }
+
+  .mobile-suglass-filter .filter-btn {
+    width: 50%;
+    margin-right: 0;
+  }
+  /* 모바일 선글라스 필터창 구현 끝 */
+}
+/* 선글라스 필터창 구현 끝 */
+
+/* 화면의 너비가 800px 이상 */
+@media (width >= 800px) {
+  .top-bar:hover {
+    background-color: #fff;
+  }
+  .top-bar__menu-box ul li a:hover::after {
+    width: 100%;
+  }
+  .top__bar-icon-box a:hover {
+    background-color: #d9d9d9;
+  }
+  .sunglass-page__category ul li:hover .category-img {
+    background-color: #dfdfdf;
+  }
+  .suglass-page__prod ul {
+    --cc: 3;
+  }
+  .suglass-page__prod ul.active {
+    --cc: 4;
+    --gap: 20px;
+  }
+  .suglass-page__filter-line .mobile-step-view,
+  .mobile-two-step-view {
+    display: none;
+  }
+  .suglass-page__prod-img:hover .suglass-page__swiper {
+    opacity: 1;
+  }
+  .suglass-page__prod-img:hover .suglass-page__default-img {
+    opacity: 0;
+  }
+  .suglass-page__prod-img .icon-heart:hover {
+    transform: scale(120%);
+  }
+  .suglass-page .mobile-icon-filter {
+    display: none;
+  }
+  .pc-step-view .pc-four-step-view rect {
+    stroke: black;
+    fill: white;
+  }
+  .pc-step-view .pc-three-step-view {
+    display: none;
+  }
+  .pc-step-view .pc-four-step-view::after {
+    content: "4단보기";
+    position: absolute;
+    top: 100%;
+    left: -60%;
+    font-size: 14px;
+    display: none;
+  }
+  .pc-step-view .pc-four-step-view:hover::after {
+    display: block;
+  }
+  .suglass-page__filter-line .pc-three-step-view::after {
+    content: "3단보기";
+    position: absolute;
+    top: 100%;
+    left: -60%;
+    font-size: 14px;
+    display: none;
+  }
+  .suglass-page__filter-line .pc-three-step-view:hover::after {
+    display: block;
+  }
+  .suglass-page__filter-line .pc-three-step-view rect {
+    fill: white;
+    stroke: black;
+    transform: rotate(90deg);
+  }
+  .suglass-page__filter-line .pc-step-view.active .pc-four-step-view {
+    display: none;
+  }
+  .suglass-page__filter-line .pc-step-view.active .pc-three-step-view {
+    display: flex;
+  }
+  .suglass-page__bottom.active #bottom-number {
+    display: none;
+  }
+}
+
+/* 화면의 너비가 900px 이하 */
+@media (900px >= width) {
+  .suglass-page__filter-line {
+    top: 70px;
+  }
+}
+
+/* 화면의 너비가 800px 이하 */
+@media (800px >= width) {
+  .suglass-page {
+    margin: 0 7px 0 7px;
+    padding-top: 140px;
+  }
+  .sunglass-page__category ul {
+    width: 858px;
+  }
+  .sunglass-page__category .category-img {
+    width: 70px;
+    height: 70px;
+  }
+  .sunglass-page__category .category-img img {
+    width: 67px;
+    height: 35px;
+  }
+  .sunglass-page__category .category-text {
+    font-size: 14px;
+  }
+  .suglass-page__prod {
+    margin-top: 30px;
+  }
+  .suglass-page__prod ul {
+    --cc: 2;
+    --gap: 10px;
+    gap: 30px var(--gap);
+  }
+  .suglass-page__prod ul.active {
+    --cc: 3;
+    --gap: 7px;
+  }
+  .sunglass-page__category {
+    overflow: auto;
+  }
+  .suglass-page__filter-line {
+    margin-top: 30px;
+  }
+  .suglass-page__filter-line > div {
+    column-gap: 10px;
+  }
+  .suglass-page__filter-line h3 {
+    font-size: 16px;
+  }
+  .suglass-page__filter-line .pc-filter {
+    display: none;
+  }
+  .suglass-page__filter-line .mobile-step-view {
+    display: flex;
+  }
+  .suglass-page__prod .suglass-page__prod-img img {
+    padding: 10px;
+  }
+  .suglass-page__swiper {
+    opacity: 1;
+  }
+  .suglass-page__default-img {
+    opacity: 0;
+  }
+  .suglass-page__prod-img .swiper-button {
+    font-size: 17px;
+  }
+  .suglass-page__prod ul.active .swiper-button {
+    font-size: 15px;
+  }
+  .suglass-page__prod-img .swiper-button-prev {
+    left: -5px;
+  }
+  .suglass-page__prod-img .swiper-button-next {
+    right: -5px;
+  }
+  .suglass-page__prod-img .icon-heart {
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+  }
+  .suglass-page__prod-name p {
+    font-size: 14px;
+    line-height: 23px;
+  }
+  .suglass-page__prod-name p:first-child {
+    margin-bottom: 13px;
+  }
+  .suglass-page__prod ul.active .suglass-page__prod-name p {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .suglass-page .pc-icon-filter {
+    display: none;
+  }
+  .mobile-icon-filter.active {
+    color: #212121;
+    font-weight: bold;
+  }
+  .mobile-icon-filter.active svg {
+    transform: rotate(180deg);
+    margin-top: 2px;
+  }
+  .suglass-page__filter-line .pc-step-view {
+    display: none;
+  }
+  .suglass-page__filter-line .mobile-two-step-view {
+    display: none;
+  }
+  .suglass-page__filter-line .mobile-three-step-view {
+    display: flex;
+  }
+  .suglass-page__filter-line .mobile-step-view rect {
+    fill: white;
+    stroke: black;
+    transform: rotate(90deg);
+  }
+  .suglass-page__filter-line .mobile-step-view.active .mobile-three-step-view {
+    display: none;
+  }
+  .suglass-page__filter-line .mobile-step-view.active .mobile-two-step-view {
+    display: flex;
+  }
+  .suglass-page__bottom {
+    column-gap: 11px;
+    padding: 50px 0;
+  }
+  .suglass-page__bottom p {
+    font-size: 16px;
+  }
+  .suglass-page__bottom .bottom-arrow-prev {
+    margin-right: 10px;
+  }
+  .suglass-page__bottom .bottom-arrow-next {
+    margin-left: 10px;
+  }
+}
+/* 선글라스 상품 페이지 구현 끝 */
+
+/* 선글라스 페이지 헬프 버튼 수정 */
+@media (600px >= width) {
+  .help-side-btn {
+    top: 70%;
+    z-index: 2;
+  }
+}
+
+/* 선글라스 페이지 페이지업 버튼 수정 */
+.page-up {
+  z-index: 3;
+}

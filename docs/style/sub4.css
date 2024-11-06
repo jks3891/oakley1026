@@ -1,0 +1,612 @@
+/* 악세서리 상품 페이지 구현 시작 */
+.accessories-page {
+  padding-top: 180px;
+  color: #212121;
+}
+
+.accessories-page__category ul {
+  display: flex;
+  justify-content: center;
+  column-gap: 50px;
+}
+
+.accessories-page__category ul li.active p {
+  color: #212121;
+  font-weight: bold;
+}
+
+.accessories-page__category ul li.active p::after {
+  display: block;
+}
+
+.accessories-page__category ul li p {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+  display: block;
+  color: #7f7f7f;
+  user-select: none;
+}
+
+.accessories-page__category ul li p::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 50%;
+  display: none;
+}
+
+.accessories-page__filter-line {
+  position: sticky;
+  top: 80px;
+  width: 100%;
+  border-bottom: 1px solid #d9d9d9;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 10px 0;
+  margin-top: 80px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.accessories-page__filter-line > div > p {
+  cursor: pointer;
+  color: #7f7f7f;
+  user-select: none;
+}
+
+.accessories-page__filter-line .pc-filter.active {
+  font-weight: bold;
+  color: #212121;
+}
+
+.pc-icon-filter.active {
+  font-weight: bold;
+  color: #212121;
+}
+
+.pc-icon-filter.active > svg {
+  transform: rotate(180deg);
+  margin-top: 2px;
+}
+
+.accessories-page__prod {
+  margin-top: 50px;
+}
+
+.accessories-page__prod ul {
+  --cc: 3;
+  --gap: 40px;
+  gap: 70px var(--gap);
+}
+
+.accessories-page__prod ul li {
+  width: calc(100% / var(--cc) - (var(--gap) * (var(--cc) - 1)) / var(--cc));
+}
+
+.accessories-page__prod-img {
+  position: relative;
+  background-color: #eee;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accessories-page__prod-img img {
+  width: 100%;
+  display: block;
+  padding: 30px;
+  transition: opacity 0.5s;
+}
+
+.accessories-page__swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+.accessories-page__prod-img .swiper-button-group {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.accessories-page__prod-img .swiper-button {
+  font-size: 24px;
+  color: #505050;
+}
+
+.swiper-button i {
+  font-weight: 600 !important;
+}
+
+.accessories-page__prod-img .swiper-button::after {
+  content: "";
+}
+
+.accessories-page__prod-img .swiper-pagination {
+  position: absolute;
+  bottom: 0 !important;
+  display: flex;
+
+  .swiper-pagination-bullet {
+    flex: 1 1 0%;
+    height: 2px;
+    border-radius: 0;
+    margin: 0 !important;
+    background-color: #888;
+    transition: all 0.5s;
+
+    &.swiper-pagination-bullet-active {
+      background-color: #000;
+    }
+  }
+}
+
+.icon-heart {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  z-index: 3;
+}
+
+.icon-heart path {
+  stroke: #212121;
+}
+
+.icon-heart.active path {
+  fill: red;
+  stroke: red;
+}
+
+.accessories-page__prod-name {
+  font-size: 18px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.accessories-page__prod-name p:last-child {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* 악세서리 필터창 구현 시작 */
+.accessories-filter {
+  position: absolute;
+  top: 58px;
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  border-top: none;
+  display: none;
+}
+
+.accessories-filter ul > li {
+  width: calc(100% / 5);
+  border-left: 1px solid #d9d9d9;
+  padding-bottom: 10px;
+}
+
+.accessories-filter ul > li:first-child {
+  border-left: none;
+}
+
+.accessories-filter__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 20px 10px;
+}
+
+.accessories-filter .ctn-left {
+  width: calc(100% / 2);
+  margin-left: 10px;
+}
+
+.accessories-filter .ctn-right {
+  width: calc(100% / 2);
+  margin-left: 10px;
+}
+
+.filter-check {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.filter-check:hover .icon-box path {
+  fill: #000;
+}
+
+.filter-check.active .icon-box {
+  display: none;
+}
+
+.filter-check.active .icon-check-box {
+  display: block;
+}
+
+.icon-box,
+.icon-check-box {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.icon-check-box {
+  display: none;
+}
+
+.color-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+.accessories-filter__ctn p {
+  font-size: 16px;
+  margin: 2px 0 0 0;
+}
+
+.filter-btn-wrap {
+  border-top: 1px solid #d9d9d9;
+  justify-content: end;
+}
+
+.filter-btn {
+  width: 130px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.filter-btn1 {
+  border-color: #d9d9d9;
+}
+
+.accessories-filter ul > li:first-child .filter-check:last-child .color-circle {
+  border: 1px solid #afafaf;
+}
+
+.accessories-page__bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  padding: 60px 0;
+}
+
+.accessories-page__bottom p {
+  cursor: pointer;
+  color: #7f7f7f;
+  font-size: 18px;
+}
+
+.accessories-page__bottom p.active {
+  font-weight: bold;
+  color: #212121;
+}
+
+.bottom-arrow {
+  font-weight: 600 !important;
+  cursor: pointer;
+  margin-bottom: 3px;
+}
+/* 악세서리 필터창 구현 끝 */
+
+/* 화면의 너비가 800px 이상 */
+@media (width >= 800px) {
+  .top-bar:hover {
+    background-color: #fff;
+  }
+  .top-bar__menu-box ul li a:hover::after {
+    width: 100%;
+  }
+  .top__bar-icon-box a:hover {
+    background-color: #d9d9d9;
+  }
+  .accessories-page__prod ul {
+    --cc: 3;
+  }
+  .accessories-page__prod ul.active {
+    --cc: 4;
+    --gap: 20px;
+  }
+  .accessories-page__prod-img:hover .accessories-page__default-img {
+    opacity: 0;
+  }
+  .accessories-page__prod-img:hover .accessories-page__swiper {
+    opacity: 1;
+  }
+  .icon-heart:hover {
+    transform: scale(120%);
+  }
+  .accessories-page__filter-line .mobile-step-view,
+  .mobile-two-step-view {
+    display: none;
+  }
+  .pc-step-view .pc-four-step-view rect {
+    stroke: black;
+    fill: white;
+  }
+  .pc-step-view .pc-three-step-view {
+    display: none;
+  }
+  .pc-step-view .pc-four-step-view::after {
+    content: "4단보기";
+    position: absolute;
+    top: 100%;
+    left: -60%;
+    font-size: 14px;
+    display: none;
+  }
+  .pc-step-view .pc-four-step-view:hover::after {
+    display: block;
+  }
+  .accessories-page__filter-line .pc-three-step-view::after {
+    content: "3단보기";
+    position: absolute;
+    top: 100%;
+    left: -60%;
+    font-size: 14px;
+    display: none;
+  }
+  .accessories-page__filter-line .pc-three-step-view:hover::after {
+    display: block;
+  }
+  .accessories-page__filter-line .pc-three-step-view rect {
+    fill: white;
+    stroke: black;
+    transform: rotate(90deg);
+  }
+  .mobile-accessories-filter {
+    display: none;
+  }
+  .accessories-page .mobile-icon-filter {
+    display: none;
+  }
+  .accessories-page__filter-line .pc-step-view.active .pc-four-step-view {
+    display: none;
+  }
+  .accessories-page__filter-line .pc-step-view.active .pc-three-step-view {
+    display: flex;
+  }
+  .accessories-page__bottom.active #bottom-number {
+    display: none;
+  }
+}
+
+/* 화면의 너비가 900px 이하 */
+@media (900px >= width) {
+  .accessories-page__filter-line {
+    top: 70px;
+  }
+}
+
+/* 화면의 너비가 800px 이하 */
+@media (800px >= width) {
+  .accessories-page {
+    margin: 0 7px;
+    padding-top: 140px;
+  }
+  .accessories-page__prod {
+    margin-top: 30px;
+  }
+  .accessories-page__prod ul {
+    --cc: 2;
+    --gap: 10px;
+    gap: 30px var(--gap);
+  }
+  .accessories-page__prod ul.active {
+    --cc: 3;
+    --gap: 7px;
+  }
+  .accessories-page__prod ul.active .accessories-page__prod-name {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .accessories-page__category ul {
+    column-gap: 23px;
+  }
+  .accessories-page__category ul li p {
+    font-size: 16px;
+  }
+  .accessories-page__category ul li p::after {
+    top: -8px;
+    width: 5px;
+    height: 5px;
+  }
+  .accessories-page__filter-line {
+    margin-top: 30px;
+  }
+  .accessories-page__filter-line > div {
+    column-gap: 10px;
+  }
+  .accessories-page__filter-line h3 {
+    font-size: 16px;
+  }
+  .accessories-page__filter-line .pc-filter {
+    display: none;
+  }
+  .accessories-page__prod .accessories-page__prod-img img {
+    padding: 20px;
+  }
+  .accessories-page__swiper {
+    opacity: 1;
+  }
+  .accessories-page__default-img {
+    opacity: 0;
+  }
+  .accessories-page__prod-img .swiper-button {
+    font-size: 17px;
+  }
+  .accessories-page__prod ul.active .swiper-button {
+    font-size: 15px;
+  }
+  .accessories-page__prod-img .swiper-button-prev {
+    left: -5px;
+  }
+  .accessories-page__prod-img .swiper-button-next {
+    right: -5px;
+  }
+  .accessories-page__prod-name {
+    font-size: 14px;
+    line-height: 23px;
+  }
+  .accessories-page__prod-img .icon-heart {
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+  }
+  .accessories-page__prod-name p:first-child {
+    margin-bottom: 13px;
+  }
+  .accessories-page__prod .accessories-page__prod-img::before {
+    font-size: 16px;
+    border-radius: 8px;
+    height: 15%;
+  }
+
+  /* 모바일 악세서리 필터창 구현 시작 */
+  .mobile-accessories-filter {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  .mobile-accessories-filter__top p {
+    font-size: 14px;
+    cursor: pointer;
+    color: #7f7f7f;
+  }
+  .mobile-accessories-filter__top p.active {
+    font-weight: bold;
+    color: #212121;
+  }
+  .mobile-accessories-filter__line {
+    border-bottom: 1px solid #afafaf;
+    font-size: 14px;
+    padding-bottom: 10px;
+    overflow: auto;
+  }
+  .mobile-accessories-filter__line .filter-category {
+    cursor: pointer;
+    white-space: nowrap;
+    color: #7f7f7f;
+  }
+  .mobile-accessories-filter .filter-category-ctn {
+    font-size: 14px;
+    margin-top: 15px;
+    width: 100%;
+    display: none;
+  }
+  .mobile-accessories-filter .filter-category.active {
+    color: #212121;
+    font-weight: bold;
+  }
+  .filter-category-ctn.active {
+    display: flex;
+  }
+  .filter-category-ctn .ctn-left,
+  .ctn-right {
+    width: 50%;
+  }
+
+  .filter-category-ctn .icon-box-wrap {
+    margin-left: -6px;
+  }
+  .mobile-accessories-filter .filter-btn {
+    width: 50%;
+    margin-right: 0;
+  }
+  .accessories-page .pc-icon-filter {
+    display: none;
+  }
+  .mobile-icon-filter.active {
+    font-weight: bold;
+    color: #212121;
+  }
+  .mobile-icon-filter.active svg {
+    transform: rotate(180deg);
+    margin-top: 2px;
+  }
+  .accessories-page__filter-line .mobile-step-view {
+    display: flex;
+  }
+  .accessories-page__filter-line .pc-step-view {
+    display: none;
+  }
+  .accessories-page__filter-line .mobile-two-step-view {
+    display: none;
+  }
+  .accessories-page__filter-line .mobile-three-step-view {
+    display: flex;
+  }
+  .accessories-page__filter-line .mobile-step-view rect {
+    fill: white;
+    stroke: black;
+    transform: rotate(90deg);
+  }
+  .accessories-page__filter-line
+    .mobile-step-view.active
+    .mobile-three-step-view {
+    display: none;
+  }
+  .accessories-page__filter-line
+    .mobile-step-view.active
+    .mobile-two-step-view {
+    display: flex;
+  }
+  .accessories-page__bottom {
+    column-gap: 11px;
+    padding: 50px 0;
+  }
+  .accessories-page__bottom p {
+    font-size: 16px;
+  }
+  .accessories-page__bottom .bottom-arrow-prev {
+    margin-right: 10px;
+  }
+  .accessories-page__bottom .bottom-arrow-next {
+    margin-left: 10px;
+  }
+  /* 모바일 악세서리 필터창 구현 끝 */
+}
+/* 악세서리 상품 페이지 구현 끝 */
+
+/* 악세서리 페이지 헬프 버튼 수정 */
+@media (600px >= width) {
+  .help-side-btn {
+    top: 70%;
+    z-index: 2;
+  }
+}
+
+/* 악세서리 페이지 페이지업 버튼 수정 */
+.page-up {
+  z-index: 3;
+}

@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서브 페이지6-2</title>
+
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 테일윈드 불러오기 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS 불러오기 -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- 폰트어썸 불러오기 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- 스와이퍼 불러오기 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 공통 css 불러오기 -->
+    <link rel="stylesheet" href="style/style.css" />
+
+    <!-- 서브 페이지6 css 불러오기 -->
+    <link rel="stylesheet" href="style/sub6.css" />
+
+    <!-- 공통 js 불러오기 -->
+    <script defer src="script/script.js"></script>
+
+    <!-- 서브 페이지6 js 불러오기 -->
+    <script defer src="script/sub6.js"></script>
+  </head>
+  <body>
+    <!-- 검색창 구현 시작 -->
+    <div class="search-box">
+      <div class="search-box__close-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40px"
+          height="40px"
+          viewBox="0 0 100 100"
+        >
+          <path
+            fill="white"
+            d="M84.707 68.752L65.951 49.998l18.75-18.752a1.99 1.99 0 0 0 0-2.813L71.566 15.295a1.99 1.99 0 0 0-2.814 0L49.999 34.047l-18.75-18.752c-.746-.747-2.067-.747-2.814 0L15.297 28.431a1.99 1.99 0 0 0 0 2.814L34.05 49.998L15.294 68.753a1.993 1.993 0 0 0 0 2.814L28.43 84.704a1.99 1.99 0 0 0 2.814 0l18.755-18.755l18.756 18.754c.389.388.896.583 1.407.583s1.019-.195 1.408-.583l13.138-13.137a1.99 1.99 0 0 0-.001-2.814"
+          />
+        </svg>
+      </div>
+      <div class="search-box-ctn">
+        <div class="search-bar">
+          <input type="text" placeholder="검색어를 입력해주세요." />
+          <button class="icon-magnifier">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30px"
+              height="30px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#9CA3AF"
+                d="m18.031 16.617l4.283 4.282l-1.415 1.415l-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9s9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617m-2.006-.742A6.98 6.98 0 0 0 18 11c0-3.867-3.133-7-7-7s-7 3.133-7 7s3.133 7 7 7a6.98 6.98 0 0 0 4.875-1.975z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="search-box__ctn-inner">
+          <div class="search-word w-[50%]">
+            <ul>
+              <li>
+                <h1>인기 검색어</h1>
+                <p class="!text-[12px]">15:00 업데이트</p>
+              </li>
+              <li>
+                <a href="sub1.html">
+                  <p>선글라스</p>
+                </a>
+                <div class="icon-line"></div>
+              </li>
+              <li>
+                <a href="sub1.html">
+                  <p>안경</p>
+                </a>
+                <div class="icon-line"></div>
+              </li>
+              <li>
+                <a href="sub2.html">
+                  <p>커스텀</p>
+                </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 20 20"
+                >
+                  <path fill="red" d="m11 7l-4 6h8z" />
+                </svg>
+              </li>
+              <li>
+                <a href="sub6.html">
+                  <p>음바페 선글라스</p>
+                </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 20 20"
+                >
+                  <path fill="red" d="m11 7l-4 6h8z" />
+                </svg>
+              </li>
+              <li>
+                <a href="sub4.html">
+                  <p>스포츠 고글</p>
+                </a>
+                <div class="icon-line"></div>
+              </li>
+              <li>
+                <a href="sub3.html">
+                  <p>바지</p>
+                </a>
+                <div class="icon-line"></div>
+              </li>
+              <li>
+                <a href="sub4.html">
+                  <p>골프</p>
+                </a>
+                <svg
+                  id="arrow-down"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 20 20"
+                >
+                  <path fill="#149CEE" d="m11 7l-4 6h8z" />
+                </svg>
+              </li>
+              <li>
+                <a href="sub4.html">
+                  <p>사이클</p>
+                </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 20 20"
+                >
+                  <path fill="red" d="m11 7l-4 6h8z" />
+                </svg>
+              </li>
+            </ul>
+          </div>
+          <div class="search-prod w-[50%]">
+            <h1 class="text-[20px] text-[#fff] font-bold">인기 상품</h1>
+            <a href="sub6.html">
+              <div class="search-prod-list search-prod-list-1 flex">
+                <div class="search-prod__img">
+                  <img
+                    src="https://i.postimg.cc/xdnDSFsr/image.png"
+                    alt="음바페 선글라스"
+                  />
+                </div>
+                <div class="search-prod__name text-[16px]">
+                  <p class="text-[#eee]">
+                    [킬리안 음바페]오클리 HSTN 아시안핏 프리즘
+                    <br />
+                    텅스텐
+                  </p>
+                  <p class="text-[#fff] font-bold mt-[12px]">222,400원</p>
+                </div>
+              </div>
+            </a>
+            <a href="sub6.html">
+              <div class="search-prod-list search-prod-list-2 flex">
+                <div class="search-prod__img">
+                  <img
+                    src="https://i.postimg.cc/sxw9v1z9/image.png"
+                    alt="레이다락 선글라스"
+                  />
+                </div>
+                <div class="search-prod__name text-[16px]">
+                  <p class="text-[#eee]">
+                    오클리 레이다락 패스 아시안핏 프리즘 제이드
+                  </p>
+                  <p class="text-[#fff] font-bold mt-[35px]">259,200원</p>
+                </div>
+              </div>
+            </a>
+            <a href="sub6.html">
+              <div class="search-prod-list search-prod-list-3 flex">
+                <div class="search-prod__img">
+                  <img
+                    src="https://i.postimg.cc/dQkyCWBc/image.png"
+                    alt="조브레이커 선글라스"
+                  />
+                </div>
+                <div class="search-prod__name text-[16px]">
+                  <p class="text-[#eee]">오클리 조브레이커 프리즘 로드</p>
+                  <p class="text-[#fff] font-bold mt-[35px]">271,200원</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 검색창 구현 끝 -->
+
+    <!-- 탑바 구현 시작 -->
+    <header class="top-bar">
+      <div class="con mx-auto h-[80px] flex">
+        <div class="top-bar__logo mr-[70px] flex items-center">
+          <a href="index.html">
+            <img
+              class="h-[34px] cursor-pointer"
+              src="https://i.postimg.cc/pXdxnvLZ/Oakley-LOGO.png"
+              alt="오클리 검정 로고"
+            />
+          </a>
+        </div>
+        <nav class="top-bar__menu-box">
+          <ul class="flex gap-x-[46px] h-full">
+            <li>
+              <a lang="en" href="sub1.html">SUNGLASSES</a>
+              <div class="mega-menu">
+                <div class="con mx-auto flex justify-between">
+                  <ul class="flex flex-grow">
+                    <li class="flex-1">
+                      <a href="sub1.html">
+                        <p lang="en">All Sunglasses</p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub1.html">
+                        <p lang="en">Best Sellers</p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub1.html">
+                        <p lang="en">New Arrivals</p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub1.html">
+                        <p lang="en">Sport</p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub1.html">
+                        <p lang="en" class="leading-[20px]">
+                          Prizm™<br />Polarized Lens
+                        </p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub1.html">
+                        <p lang="en">Prizm™ Lens</p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub1.html">
+                        <p lang="en">Lifestyle</p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub1.html">
+                        <p lang="en">Youth</p>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="top-bar__banner">
+                    <img
+                      class="w-[280px]"
+                      src="https://i.postimg.cc/cJNvYS63/444153115-18440144521001463-5663691861752023599-n.jpg"
+                      alt="메뉴 선글라스 배너"
+                    />
+                    <div class="top-bar__banner-text">
+                      <p lang="en">New Sunglasses</p>
+                      <div class="icon-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="23"
+                          height="23"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="black"
+                            d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a lang="en" href="sub2.html">CUSTOM</a>
+            </li>
+            <li>
+              <a lang="en" href="sub3.html">APPAREL</a>
+              <div class="mega-menu">
+                <div class="con mx-auto flex justify-between">
+                  <ul class="flex flex-grow">
+                    <li class="flex-1">
+                      <a href="sub3.html">
+                        <p lang="en">All Apparel</p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub3.html">
+                        <p lang="en">Top</p>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="sub3.html"><p lang="en">T-shirt</p></a>
+                        </li>
+                        <li>
+                          <a href="sub3.html"><p lang="en">Hoodies</p></a>
+                        </li>
+                        <li>
+                          <a href="sub3.html"><p lang="en">Shorts</p></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub3.html">
+                        <p lang="en">Bottom</p>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="sub3.html"><p lang="en">Pants</p></a>
+                        </li>
+                        <li>
+                          <a href="sub3.html"><p lang="en">Shorts</p></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub3.html">
+                        <p lang="en">Outer</p>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="sub3.html"><p lang="en">Jackets</p></a>
+                        </li>
+                        <li>
+                          <a href="sub3.html"><p lang="en">Down Jacket</p></a>
+                        </li>
+                        <li>
+                          <a href="sub3.html"><p lang="en">Vest</p></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub3.html">
+                        <p lang="en">Shoes</p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub3.html">
+                        <p lang="en">Sports</p>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="top-bar__banner">
+                    <img
+                      class="w-[280px]"
+                      src="https://i.postimg.cc/kXhzyyNq/459407347-18463053709001463-9213227136654014599-n.jpg"
+                      alt="메뉴 어패럴 배너"
+                    />
+                    <div class="top-bar__banner-text">
+                      <p lang="en">Outdoor Collection</p>
+                      <div class="icon-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="23"
+                          height="23"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="black"
+                            d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a lang="en" href="sub4.html">ACCESSORIES</a>
+              <div class="mega-menu">
+                <div class="con mx-auto flex justify-between">
+                  <ul class="flex flex-grow">
+                    <li class="flex-1">
+                      <a href="sub4.html">
+                        <p lang="en">All Accessories</p>
+                      </a>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub4.html">
+                        <p>Bag</p>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="sub4.html"><p lang="en">BackPack</p></a>
+                        </li>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Golf Bag</p></a>
+                        </li>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Carrier</p></a>
+                        </li>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Duffel Bag</p></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub4.html">
+                        <p lang="en">Hat</p>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Cap</p></a>
+                        </li>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Beanie</p></a>
+                        </li>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Bucket Hat</p></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub4.html">
+                        <p lang="en">Helmet</p>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Cycle & MTB</p></a>
+                        </li>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Snow</p></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub4.html">
+                        <p lang="en">Gloves</p>
+                      </a>
+                      <ul>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Cycle & MTB</p></a>
+                        </li>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Snow</p></a>
+                        </li>
+                        <li>
+                          <a href="sub4.html"><p lang="en">Golf</p></a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="flex-1">
+                      <a href="sub4.html">
+                        <p lang="en">Sports</p>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="top-bar__banner">
+                    <img
+                      class="w-[280px]"
+                      src="https://i.postimg.cc/jq1q8Hds/Untitled-1.png"
+                      alt="메뉴 악세서리 배너"
+                    />
+                    <div class="top-bar__banner-text">
+                      <p lang="en">Signature Series</p>
+                      <div class="icon-arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="23"
+                          height="23"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="black"
+                            d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a lang="en" href="sub5.html">IDENTITY</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="top__bar-icon-box flex">
+          <div class="icon-search">
+            <svg
+              id="search-bar-open"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30px"
+              height="30px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314"
+              />
+            </svg>
+          </div>
+          <div class="icon-login">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30px"
+              height="26px"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill="black"
+                d="M10 8c1.7 0 3.06-1.35 3.06-3S11.7 2 10 2S6.94 3.35 6.94 5S8.3 8 10 8m0 2c-2.8 0-5.06-2.24-5.06-5S7.2 0 10 0s5.06 2.24 5.06 5s-2.26 5-5.06 5m-7 8h14v-1.33c0-1.75-2.31-3.56-7-3.56s-7 1.81-7 3.56zm7-6.89c6.66 0 9 3.33 9 5.56V20H1v-3.33c0-2.23 2.34-5.56 9-5.56"
+              />
+            </svg>
+          </div>
+          <div class="icon-shopping">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32px"
+              height="32px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2l.917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8z"
+              />
+            </svg>
+          </div>
+          <div class="icon-menu">
+            <div class="line"></div>
+          </div>
+        </div>
+        <div class="mobile-side-bar">
+          <div class="mobile-side-bar__inner h-full">
+            <div class="mobile-side-bar__head">
+              <div class="mobile-icon-login cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30px"
+                  height="26px"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill="#fff"
+                    d="M10 8c1.7 0 3.06-1.35 3.06-3S11.7 2 10 2S6.94 3.35 6.94 5S8.3 8 10 8m0 2c-2.8 0-5.06-2.24-5.06-5S7.2 0 10 0s5.06 2.24 5.06 5s-2.26 5-5.06 5m-7 8h14v-1.33c0-1.75-2.31-3.56-7-3.56s-7 1.81-7 3.56zm7-6.89c6.66 0 9 3.33 9 5.56V20H1v-3.33c0-2.23 2.34-5.56 9-5.56"
+                  />
+                </svg>
+              </div>
+              <div class="mobile-icon-shopping cursor-pointer">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="34px"
+                  height="32px"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="#fff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2l.917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="mobile-side-bar__body">
+              <nav class="mobile-menu-box">
+                <ul>
+                  <li>
+                    <a lang="en" href="#"
+                      >SUNGLASSES
+                      <svg
+                        class="mobile-icon-arrow"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="none"
+                          stroke="black"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="m7 10l5 5m0 0l5-5"
+                        />
+                      </svg>
+                    </a>
+                    <ul>
+                      <li>
+                        <a lang="en" href="sub1.html">All Sunglasses</a>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub1.html">Best Sellers</a>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub1.html">New Arrivals</a>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub1.html">Sport</a>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub1.html">Prizm™</a>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub1.html">Prizm™ Lens</a>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub1.html">Lifestyle</a>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub1.html">Youth</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a lang="en" href="sub2.html">CUSTOM</a>
+                  </li>
+                  <li>
+                    <a lang="en" href="#"
+                      >APPAREL
+                      <svg
+                        class="mobile-icon-arrow"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="none"
+                          stroke="black"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="m7 10l5 5m0 0l5-5"
+                        />
+                      </svg>
+                    </a>
+                    <ul>
+                      <li>
+                        <a lang="en" href="sub3.html">All Apparel </a>
+                      </li>
+                      <li>
+                        <a lang="en" href="#"
+                          >Top
+                          <svg
+                            class="mobile-icon-arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="none"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="m7 10l5 5m0 0l5-5"
+                            />
+                          </svg>
+                        </a>
+                        <ul>
+                          <li>
+                            <a lang="en" href="sub3.html">T-shirt</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub3.html">Hoodies</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub3.html">Shorts</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a lang="en" href="#"
+                          >Bottom
+                          <svg
+                            class="mobile-icon-arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="none"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="m7 10l5 5m0 0l5-5"
+                            />
+                          </svg>
+                        </a>
+                        <ul>
+                          <li>
+                            <a lang="en" href="sub3.html">Pants</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub3.html">Shorts</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a lang="en" href="#"
+                          >Outer
+                          <svg
+                            class="mobile-icon-arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="none"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="m7 10l5 5m0 0l5-5"
+                            />
+                          </svg>
+                        </a>
+                        <ul>
+                          <li>
+                            <a lang="en" href="sub3.html">Jackets</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub3.html">Down Jacket</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub3.html">Vest</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub3.html">Shoes</a>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub3.html">Sports</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a lang="en" href="#"
+                      >ACCESSORIES
+                      <svg
+                        class="mobile-icon-arrow"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="none"
+                          stroke="black"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2.5"
+                          d="m7 10l5 5m0 0l5-5"
+                        />
+                      </svg>
+                    </a>
+                    <ul>
+                      <li>
+                        <a href="sub4.html">All Accessories</a>
+                      </li>
+                      <li>
+                        <a lang="en" href="#"
+                          >Bag
+                          <svg
+                            class="mobile-icon-arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="none"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="m7 10l5 5m0 0l5-5"
+                            />
+                          </svg>
+                        </a>
+                        <ul>
+                          <li>
+                            <a lang="en" href="sub4.html">BackPack</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub4.html">Golf Bag</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub4.html">Carrier</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub4.html">Duffel Bag</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a lang="en" href="#"
+                          >Hat
+                          <svg
+                            class="mobile-icon-arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="none"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="m7 10l5 5m0 0l5-5"
+                            />
+                          </svg>
+                        </a>
+                        <ul>
+                          <li>
+                            <a lang="en" href="sub4.html">Cap</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub4.html">Beanie</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub4.html">Bucket Hat</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a lang="en" href="#"
+                          >Helmet
+                          <svg
+                            class="mobile-icon-arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="none"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="m7 10l5 5m0 0l5-5"
+                            />
+                          </svg>
+                        </a>
+                        <ul>
+                          <li>
+                            <a lang="en" href="sub4.html">Cycle & MTB</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub4.html">Snow</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a lang="en" href="#"
+                          >Gloves
+                          <svg
+                            class="mobile-icon-arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              fill="none"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2.5"
+                              d="m7 10l5 5m0 0l5-5"
+                            />
+                          </svg>
+                        </a>
+                        <ul>
+                          <li>
+                            <a lang="en" href="sub4.html">Cycle & MTB</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub4.html">Snow</a>
+                          </li>
+                          <li>
+                            <a lang="en" href="sub4.html">Golf</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a lang="en" href="sub4.html">Sports</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a lang="en" href="sub5.html">IDENTITY</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="mobile-side-bar__foot">
+              <div class="flex gap-x-[10px]">
+                <div class="mobile-side-bar__banner mobile-side-bar__banner1">
+                  <img
+                    class="w-full h-full"
+                    src="https://i.postimg.cc/NfPBSRMY/image-2.png"
+                    alt="모바일 선글라스 배너"
+                  />
+                  <div class="top-bar__banner-text">
+                    <p lang="en">New Sunglasses</p>
+                    <div class="icon-arrow">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="black"
+                          d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile-side-bar__banner mobile-side-bar__banner2">
+                  <img
+                    class="w-full h-full"
+                    src="https://i.postimg.cc/V6gMqKFX/459407347-18463053709001463-9213227136654014599-n-1.png"
+                    alt="모바일 어패럴 배너"
+                  />
+                  <div class="top-bar__banner-text">
+                    <p lang="en">Outdoor Collection</p>
+                    <div class="icon-arrow">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="black"
+                          d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile-side-bar__banner mobile-side-bar__banner3">
+                  <img
+                    class="w-full h-full"
+                    src="https://i.postimg.cc/KjC35j1y/Untitled-1-2.png"
+                    alt="모바일 악세서리 배너"
+                  />
+                  <div class="top-bar__banner-text">
+                    <p lang="en">Signature Series</p>
+                    <div class="icon-arrow">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="black"
+                          d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- 탑바 구현 끝 -->
+
+    <!-- 상품 상세 페이지 구현 시작 -->
+    <div class="detail-page mt-[80px]">
+      <div class="con mx-auto">
+        <div class="detail__course flex gap-x-[7px] text-[14px] py-[30px]">
+          <a lang="en" href="#">SUNGLASSES</a>
+          <span>></span>
+          <a lang="en" href="#">Prizm™ Lens</a>
+          <span>></span>
+          <a lang="en" href="#">Kylian Mbappé Latch™ Panel</a>
+        </div>
+        <div class="detail__top flex">
+          <div class="detail-prod w-[50%]">
+            <div class="prod-swiper">
+              <div
+                style="
+                  --swiper-navigation-color: #000;
+                  --swiper-pagination-color: #000;
+                "
+                class="swiper mySwiper2"
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="https://i.postimg.cc/7P5V8qXd/ok-0-OO94040535-1000-1.png"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://i.postimg.cc/zDFQ6cvX/ok-0-OO94040535-1000-2.png"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://i.postimg.cc/1XKmDq8w/ok-0-OO94040535-1000-4.png"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://i.postimg.cc/d14NdQqD/ok-0-OO94040535-1000-3.png"
+                    />
+                  </div>
+                </div>
+
+                <div class="swiper-button-wrap">
+                  <div class="swiper-button swiper-button-next"></div>
+                  <div class="swiper-button swiper-button-prev"></div>
+                </div>
+              </div>
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="https://i.postimg.cc/7P5V8qXd/ok-0-OO94040535-1000-1.png"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://i.postimg.cc/zDFQ6cvX/ok-0-OO94040535-1000-2.png"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://i.postimg.cc/1XKmDq8w/ok-0-OO94040535-1000-4.png"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://i.postimg.cc/d14NdQqD/ok-0-OO94040535-1000-3.png"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="detail-information w-[45%]">
+            <p class="text-[28px] font-bold mb-[10px]">
+              [킬리안 음바페] 래치 패널 프리즘
+            </p>
+            <p class="text-[20px]">259,200 원</p>
+            <div class="detail-review-box mt-[35px]">
+              <p lang="en" class="text-[20px] font-bold mb-[7px]">Review</p>
+              <div class="flex justify-between">
+                <div class="detail-review__left flex gap-x-[5px]">
+                  <i class="detail-star fa-solid fa-star"></i>
+                  <i class="detail-star fa-solid fa-star"></i>
+                  <i class="detail-star fa-solid fa-star"></i>
+                  <i class="detail-star fa-solid fa-star"></i>
+                  <i class="detail-star fa-solid fa-star-half"></i>
+                  <span class="text-[18px]">5.0</span>
+                </div>
+                <div class="detail-review__right">
+                  <span lang="en" class="text-[14px] cursor-pointer underline"
+                    >view more</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="detail-color-box mt-[35px]">
+              <p lang="en" class="text-[20px] font-bold mb-[7px]">Color</p>
+              <div class="flex gap-x-[10px]">
+                <div class="detail-color__img">
+                  <a href="sub6.html">
+                    <img
+                      src="https://i.postimg.cc/ydYJ3DSt/OA-0-OO94040835-1000-1.png"
+                      alt="음바페 선글라스1"
+                    />
+                  </a>
+                </div>
+                <div class="detail-color__img">
+                  <a href="#">
+                    <img
+                      class="!bg-[#d9d9d9]"
+                      src="https://i.postimg.cc/7P5V8qXd/ok-0-OO94040535-1000-1.png"
+                      alt="음바페 선글라스2"
+                    />
+                  </a>
+                </div>
+                <div class="detail-color__img">
+                  <a href="sub6-3.html">
+                    <img
+                      src="https://i.postimg.cc/R0KR0gvt/ok-0-OO94040235-1000-1.png"
+                      alt="음바페 선글라스3"
+                    />
+                  </a>
+                </div>
+                <div class="detail-color__img">
+                  <a href="sub6-4.html">
+                    <img
+                      src="https://i.postimg.cc/zfyw5Gds/OA-0-OO94040635-1000-1.png"
+                      alt="음바페 선글라스4"
+                    />
+                  </a>
+                </div>
+                <div class="detail-color__img">
+                  <a href="sub6-5.html">
+                    <img
+                      src="https://i.postimg.cc/MpNZynFL/ok-0-OO94041035-1000-1.png"
+                      alt="음바페 선글라스5"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="detail-size-box mt-[35px]">
+              <p lang="en" class="text-[20px] font-bold mb-[7px]">Size</p>
+              <div lang="en">FREE</div>
+            </div>
+            <div class="detail-button-box mt-[40px]">
+              <div class="flex gap-x-[10px]">
+                <div id="button-heart">
+                  <svg
+                    class="icon-heart"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26px"
+                    height="26px"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      fill="none"
+                      stroke="black"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M7.004 12.383L1.53 7.424c-2.975-2.975 1.398-8.688 5.474-4.066c4.076-4.622 8.43 1.11 5.475 4.066z"
+                    />
+                  </svg>
+                </div>
+                <div lang="en" id="button-cart" class="detail-btn">
+                  ADD TO CART
+                </div>
+                <div lang="en" id="button-buy" class="detail-btn">BUY NOW</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="detail__mid mt-[128px] bg-[#000]">
+        <div class="con mx-auto">
+          <div class="detail-video-box">
+            <video class="pc-video" autoplay="" loop="" muted="" playsinline="">
+              <source src="https://ifh.cc/v/vHFSRX.mp4" type="video/mp4" />
+            </video>
+            <video
+              class="mobile-video"
+              autoplay=""
+              loop=""
+              muted=""
+              playsinline=""
+            >
+              <source src="https://ifh.cc/v/qvTJNd.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div
+            class="detail-text-box text-[20px] text-[#eee] py-[82px] px-[125px]"
+          >
+            <p>
+              Signature Series Latch Panel은 킬리안 음바페의 경기장 안에서 가장
+              위대한 선수가 되고자 하는 그의 결의와 포부를 나타내는제품 입니다.
+              해당 제품의 반투명 청색 BiO-Matter 프레임은 음바페의 국적인
+              프랑스를 오마주해 패션과 스포츠의 균형을잘 맞추고 있습니다. 사이드
+              실드로 주변의 방해 요소를 차단하고, Prizm Tungsten렌즈를 통해
+              색상과 대비를 향상 시킴으로써 Signature Series Latch Panel은
+              앞으로의 도전에 집중할 수 있게 해줍니다.
+            </p>
+          </div>
+          <div class="detail-img-box">
+            <div class="detail-img-1 flex">
+              <img
+                src="https://i.postimg.cc/jC0PhwL8/0-OO9404-940408-P21-noshad-adv.jpg"
+                alt="상품 상세 페이지 이미지1"
+              />
+              <img
+                src="https://i.postimg.cc/k5HHmCGx/0-OO9404-940408-PREMIUM-shad-al.png"
+                alt="상품 상세 페이지 이미지2"
+              />
+            </div>
+            <div class="detail-img-2 flex">
+              <img
+                src="https://i.postimg.cc/632pWB0w/0-OO9404-940408-PREMIUM-shad-al5.png"
+                alt="상품 상세 페이지 이미지3"
+              />
+              <img
+                src="https://i.postimg.cc/CKdq8TNr/0-OO9404-940408-PREMIUM-shad-al3.png"
+                alt="상품 상세 페이지 이미지4"
+              />
+            </div>
+            <div class="detail-img-3 flex">
+              <img
+                src="https://i.postimg.cc/XqK8PStc/0-OO9404-940408-PREMIUM-shad-al4.png"
+                alt="상품 상세 페이지 이미지5"
+              />
+              <img
+                src="https://i.postimg.cc/7ZS2Mn80/0-OO9404-940408-PREMIUM-shad-al2.png"
+                alt="상품 상세 페이지 이미지6"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="detail__bottom pb-[87px]">
+        <div class="con mx-auto px-[44px]">
+          <div class="detail-technology-box mb-[104px] mt-[69px]">
+            <div class="technology technology-1">
+              <img
+                src="https://i.postimg.cc/gknPLGL6/398656885-18399836413001463-1806186333217453467-n.jpg"
+                alt="상새 페이지 기술 이미지1"
+              />
+              <div class="technology-text">
+                <p class="text-[18px] font-bold mb-[10px]">선명한 시야</p>
+                <p>
+                  렌즈 곡률은 광학 장치와 시력에 영향을 줍니다. 오클리 HDO
+                  기술은 이를 해결하여 왜곡을 줄이는 동시에 더 선명하고 또렷하며
+                  정확한 시야를 제공합니다.
+                </p>
+              </div>
+            </div>
+            <div class="technology technology-2">
+              <img
+                src="https://i.postimg.cc/2jtNN32X/420845789-18414660976001463-1896181420951769715-n.jpg"
+                alt="상새 페이지 기술 이미지2"
+              />
+              <div class="technology-text">
+                <p class="text-[18px] font-bold mb-[10px]">충격 보호</p>
+                <p>
+                  오클리 렌즈는 매우 높은 질량과 빠른 속도의 환경에서 설계되고
+                  테스트 되어 다양한 까다로운 조건에서도 일정한 보호 기능을
+                  보장합니다.
+                </p>
+              </div>
+            </div>
+            <div class="technology technology-3">
+              <img
+                src="https://i.postimg.cc/gJC9RTXb/211977284-341415824188798-2855219007420066536-n.jpg"
+                alt="상새 페이지 기술 이미지3"
+              />
+              <div class="technology-text">
+                <p class="text-[18px] font-bold mb-[10px]">초경량 소재</p>
+                <p>
+                  하루 종일 편안하고 날씨에 대한 내구성이 뛰어난 초경량 내구성
+                  프레임 소재를 사용했습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="text-[24px] font-bold mb-[18px] mt-[93px]">관련 상품</p>
+          <div class="bottom-slide relative">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="https://i.postimg.cc/dVs0djzV/OK-0-OJ90090948-1000-1.png"
+                    alt="상세 페이지 바텀 슬라이드 이미지1"
+                  />
+                  <div class="bottom-slide-text">
+                    <p>[킬리안 음바페] 시그니처 시리즈 프로그스킨</p>
+                    <p>168,800 원</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://i.postimg.cc/02BXjShM/OK-0-OO9242-A0752-1000-1.png"
+                    alt="상세 페이지 바텀 슬라이드 이미지2"
+                  />
+                  <div class="bottom-slide-text">
+                    <p>[킬리안 음바페] 시그니처 시리즈 HSTN</p>
+                    <p>222,400 원</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://i.postimg.cc/kgNbPybQ/0-OX8139-813905-P21-shad-qt-4.png"
+                    alt="상세 페이지 바텀 슬라이드 이미지3"
+                  />
+                  <div class="bottom-slide-text">
+                    <p>[킬리안 음바페] 시그니처 시리즈 HSTN</p>
+                    <p>222,400 원</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://i.postimg.cc/BvXPPfzg/0-OY8009-800908-P21-shad-qt-3.png"
+                    alt="상세 페이지 바텀 슬라이드 이미지4"
+                  />
+                  <div class="bottom-slide-text">
+                    <p>[킬리안 음바페] 시그니처 시리즈 프로그스킨</p>
+                    <p>168,800 원</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="https://i.postimg.cc/zfyw5Gds/OA-0-OO94040635-1000-1.png"
+                    alt="상세 페이지 바텀 슬라이드 이미지5"
+                  />
+                  <div class="bottom-slide-text">
+                    <p>[킬리안 음바페] 시그니처 래치 패널 사파이어</p>
+                    <p>259,200 원</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-group">
+              <div class="swiper-button swiper-button-prev">
+                <i class="fa-solid fa-chevron-left"></i>
+              </div>
+              <div class="swiper-button swiper-button-next">
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 상품 상세 페이지 구현 끝 -->
+
+    <!-- 헬프 팝업 구현 시작 -->
+    <div class="help-popup-wrap">
+      <div class="help-side-btn">
+        <i class="fa-solid fa-hand"></i>
+        <span lang="en" class="ml-[5px]">HELP ?</span>
+      </div>
+
+      <div class="help-popup">
+        <div class="help-popup__content">
+          <div class="help-popup__close-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30px"
+              height="30px"
+              viewBox="0 0 100 100"
+            >
+              <path
+                fill="black"
+                d="M84.707 68.752L65.951 49.998l18.75-18.752a1.99 1.99 0 0 0 0-2.813L71.566 15.295a1.99 1.99 0 0 0-2.814 0L49.999 34.047l-18.75-18.752c-.746-.747-2.067-.747-2.814 0L15.297 28.431a1.99 1.99 0 0 0 0 2.814L34.05 49.998L15.294 68.753a1.993 1.993 0 0 0 0 2.814L28.43 84.704a1.99 1.99 0 0 0 2.814 0l18.755-18.755l18.756 18.754c.389.388.896.583 1.407.583s1.019-.195 1.408-.583l13.138-13.137a1.99 1.99 0 0 0-.001-2.814"
+              />
+            </svg>
+          </div>
+          <h3 class="font-bold">도움이 필요하신가요?</h3>
+          <ul class="text-[#222] text-[16px]">
+            <li>
+              <a href="#" class="flex">
+                <div class="question-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24px"
+                    height="24px"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill="black"
+                      d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25c.09-.656.54-1.134 1.342-1.134c.686 0 1.314.343 1.314 1.168c0 .635-.374.927-.965 1.371c-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486c.609-.463 1.244-.977 1.244-2.056c0-1.511-1.276-2.241-2.673-2.241c-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927c.609 0 1.028-.394 1.028-.927c0-.552-.42-.94-1.029-.94c-.584 0-1.009.388-1.009.94"
+                    />
+                  </svg>
+                </div>
+                <span>자주 묻는 질문</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex">
+                <div class="chatting-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill="black"
+                      d="M10 0c5.342 0 10 4.41 10 9.5c0 5.004-4.553 8.942-10 8.942a11 11 0 0 1-3.43-.546c-.464.45-.623.603-1.608 1.553c-.71.536-1.378.718-1.975.38c-.602-.34-.783-1.002-.66-1.874l.4-2.319C.99 14.002 0 11.842 0 9.5C0 4.41 4.657 0 10 0m0 1.4c-4.586 0-8.6 3.8-8.6 8.1c0 2.045.912 3.928 2.52 5.33l.02.017l.297.258l-.067.39l-.138.804l-.037.214l-.285 1.658a3 3 0 0 0-.03.337v.095q0 .007-.002.008c.007-.01.143-.053.376-.223l2.17-2.106l.414.156a9.6 9.6 0 0 0 3.362.605c4.716 0 8.6-3.36 8.6-7.543c0-4.299-4.014-8.1-8.6-8.1M5.227 7.813a1.5 1.5 0 1 1 0 2.998a1.5 1.5 0 0 1 0-2.998m4.998 0a1.5 1.5 0 1 1 0 2.998a1.5 1.5 0 0 1 0-2.998m4.997 0a1.5 1.5 0 1 1 0 2.998a1.5 1.5 0 0 1 0-2.998"
+                    />
+                  </svg>
+                </div>
+                <span>채팅으로 문의 해보세요</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex">
+                <div class="email-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 32 32"
+                  >
+                    <path
+                      fill="black"
+                      d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-2.2 2L16 14.78L6.2 8ZM4 24V8.91l11.43 7.91a1 1 0 0 0 1.14 0L28 8.91V24Z"
+                    />
+                  </svg>
+                </div>
+                <span>이메일로 문의 해보세요</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex">
+                <div class="call-icon flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      fill="black"
+                      d="M146.2 46.45a6 6 0 0 1 7.35-4.25a84.24 84.24 0 0 1 60.25 60.25a6 6 0 0 1-4.25 7.35a6 6 0 0 1-1.55.2a6 6 0 0 1-5.8-4.45a72.34 72.34 0 0 0-51.75-51.75a6 6 0 0 1-4.25-7.35m-3.75 39.35C157 89.68 166.32 99 170.2 113.55A6 6 0 0 0 176 118a6 6 0 0 0 1.55-.2a6 6 0 0 0 4.25-7.35c-5-18.71-17.54-31.25-36.25-36.25a6 6 0 1 0-3.1 11.6m79.44 97A54.25 54.25 0 0 1 168 230C89.7 230 26 166.3 26 88a54.25 54.25 0 0 1 47.17-53.89a14 14 0 0 1 14.56 8.39l21.1 47.1a14 14 0 0 1-1.12 13.28a6 6 0 0 1-.42.57l-21.07 25.06a1.89 1.89 0 0 0 0 1.67c7.66 15.68 24.1 32 40 39.65a1.88 1.88 0 0 0 1.68-.06l24.69-21a5 5 0 0 1 .56-.42a14 14 0 0 1 13.28-1.22l47.24 21.17a14 14 0 0 1 8.22 14.53ZM210 181.32a2 2 0 0 0-1.21-2l-47.25-21.17a1.92 1.92 0 0 0-1.6.1l-24.68 21c-.18.15-.37.29-.56.42a14 14 0 0 1-13.77 1c-18.36-8.87-36.66-27-45.53-45.19a14 14 0 0 1 .91-13.73a5 5 0 0 1 .43-.57l21.05-25.09a2 2 0 0 0 0-1.67L76.74 47.31A2 2 0 0 0 74.9 46h-.23A42.24 42.24 0 0 0 38 88c0 71.68 58.32 130 130 130a42.24 42.24 0 0 0 42-36.68"
+                    />
+                  </svg>
+                </div>
+                <span>
+                  800 403 7449
+                  <br />
+                  월요일 ~ 금요일:
+                  <br />
+                  오전 8시 30분 ~ 오후 5시 30분 EST
+                  <br />
+                  토요일 ~ 일요일: 휴무
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 헬프 팝업 구현 끝 -->
+
+    <!-- 푸터 구현 시작 -->
+    <footer class="footer-wrap bg-[#00031E] text-[14px] text-[#eee]">
+      <div class="con mx-auto py-[48px] flex">
+        <div class="footer__left-ctn w-[50%] flex justify-center items-center">
+          <div class="footer__logo w-[50%]">
+            <img
+              data-aos="zoom-in"
+              data-aos-duration="1500"
+              src="https://i.postimg.cc/BvKx127n/image.png"
+              alt="오클리 푸터 로고"
+            />
+          </div>
+        </div>
+        <div class="footer__right-ctn w-[50%]">
+          <div class="legal flex flex-wrap">
+            <a href="#">이용약관</a>
+            <a href="#">개인정보 보호 및 보안</a>
+            <a href="#">소비자 건강 데이터 개인정보 보호 정책</a>
+            <a href="#">위조품 신고</a>
+            <a href="#">지적 재산권</a>
+          </div>
+          <div class="copyright mt-[20px]">
+            <p>Copyright ©2024 Oakley, Inc. All Rights Reserved.</p>
+          </div>
+          <div class="follow-wrap mt-[20px]">
+            <ul class="flex gap-x-[16px]">
+              <li class="facebook-icon">
+                <a href="#">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="none"
+                        stroke="black"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="ig-icon">
+                <a href="#">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="black"
+                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="twitter-icon">
+                <a href="#">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="black"
+                        d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="youtube-icon">
+                <a href="#">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24px"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                    >
+                      <g fill="black" fill-rule="evenodd" clip-rule="evenodd">
+                        <path
+                          d="M10.386 8.357A.75.75 0 0 0 9.25 9v6a.75.75 0 0 0 1.136.643l5-3a.75.75 0 0 0 0-1.286zM13.542 12l-2.792 1.675v-3.35z"
+                        />
+                        <path
+                          d="M17.03 4.641a64.5 64.5 0 0 0-10.06 0l-2.241.176a2.975 2.975 0 0 0-2.703 2.475a28.6 28.6 0 0 0 0 9.416a2.975 2.975 0 0 0 2.703 2.475l2.24.176c3.349.262 6.713.262 10.062 0l2.24-.176a2.975 2.975 0 0 0 2.703-2.475c.52-3.117.52-6.299 0-9.416a2.975 2.975 0 0 0-2.703-2.475zM7.087 6.137a63 63 0 0 1 9.828 0l2.24.175c.676.053 1.229.56 1.34 1.228a27 27 0 0 1 0 8.92a1.475 1.475 0 0 1-1.34 1.228l-2.24.175a63 63 0 0 1-9.828 0l-2.24-.175a1.475 1.475 0 0 1-1.34-1.228a27 27 0 0 1 0-8.92a1.475 1.475 0 0 1 1.34-1.228z"
+                        />
+                      </g>
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="tiktok-icon">
+                <a href="#">
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill="black"
+                        d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- 푸터 구현 끝 -->
+
+    <!-- 페이지 업 버튼 구현 시작 -->
+    <div class="page-up">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 256 256"
+      >
+        <path
+          fill="black"
+          d="M204.24 139.76a6 6 0 1 1-8.48 8.48L134 86.49V224a6 6 0 0 1-12 0V86.49l-61.76 61.75a6 6 0 0 1-8.48-8.48l72-72a6 6 0 0 1 8.48 0ZM216 34H40a6 6 0 0 0 0 12h176a6 6 0 0 0 0-12"
+        />
+      </svg>
+    </div>
+    <!-- 페이지 업 버튼 구현 끝 -->
+  </body>
+</html>
