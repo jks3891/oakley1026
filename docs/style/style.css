@@ -264,7 +264,7 @@ html > body.active {
     margin-right: 10px;
   }
   .search-prod .search-prod-list {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
   }
   .search-box .search-prod img {
     width: 70px;
@@ -273,11 +273,9 @@ html > body.active {
   .search-prod__name {
     font-size: 15px !important;
   }
-  .search-prod-list-1 p {
-    margin-top: 5px;
-  }
-  .search-prod-list-2 p,
-  .search-prod-list-3 p {
+  .search-prod-list-1 p:last-child,
+  .search-prod-list-2 p:last-child,
+  .search-prod-list-3 p:last-child {
     margin-top: 25px;
   }
 }
